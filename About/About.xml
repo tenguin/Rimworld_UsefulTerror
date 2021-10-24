@@ -11,7 +11,7 @@ Give terror a non-redundant benefit, and make it less janky.
 1. Terror can be used to weaken or nullify the "weapon proximity", "escape route", and "unattended" rebellion penalties. Meaning that outdoor work, hauling/smelting in the armory, assisting in fighting, or even leaving the map with all your colonists is now possible as long as there is sufficient terror coverage.
 2. The terror object observation will remain for 1 in-game hour instead of immediately ending once out of the 5 cell range of the terror object.
 
-Suppression adjusted so that a collar and body strap will not be enough fully halt suppression loss, requiring at least some terror object decoration if you want suppression loss to be zero.
+Suppression adjusted so that a collar and body strap will not be enough fully halt suppression loss, requiring at least some terror objects if you want suppression loss to be zero.
 1. Collar and Body straps now only reduce suppression loss by 5% each, down from 15%. 
 2. Suppression reduction from terror reduced to -20% at 100% terror, down from -45% at 100% terror (Need at least 50% terror with collar and body strap for suppression loss to be zero).
 3. Wardens will now suppress when suppression is under 80%, up from 70%.
@@ -21,7 +21,7 @@ Terror values adjusted, because there was no reason to use Gibbets or Terror scu
 2. Terror sculpture buffed to 40 terror, up from 10 terror, +-5 per quality difference.
 3. Skullspikes are now lightweight objects like Torches, so they can be placed in sand/swampy terrain, over stockpile zones, won't block wind turbines, and be easily walked over.
 
-The combined effect is that terror will both serve a unique role and be an important consideration in base design. Like a proper game mechanic!
+The combined effect is that terror will both serve a unique role and be an important consideration in base design. Just in time for Halloween!
 
 *Optimized for performance.
 *Safe to add and remove mid-game.
@@ -30,7 +30,7 @@ The combined effect is that terror will both serve a unique role and be an impor
 
 Github Link: https://github.com/tenguin/Rimworld_UsefulTerror
     
-Credits to: grape05843924, Walfieee, and Pomu Rainpuff for the art sources used in the thumbnail! Give them a visit!
+Credits to: grape05843924, Walfieee, and Pomu Rainpuff for the art sources used in the thumbnail and tanosii_chan for the upvote animation! Give them a visit!
   </description>
   <supportedVersions>
     <li>1.3</li>
