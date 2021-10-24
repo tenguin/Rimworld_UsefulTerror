@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- Make skullspike walk-over-able and buildable on light terrain like torches-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="Skullspike"]/terrainAffordanceNeeded</xpath>
+    <value>
+      <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="Skullspike"]/pathCost</xpath>
+    <value>
+      <pathCost>14</pathCost>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="Skullspike"]/canOverlapZones</xpath>
+    <value>
+      <canOverlapZones>true</canOverlapZones>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="Skullspike"]/blockWind</xpath>
+    <value>
+      <blockWind>false</blockWind>
+    </value>
+  </Operation>
+  
+  <!--Terror sculptures and Gibbets are underpowered compared to skullspikes-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="SculptureTerror"]/statBases/TerrorSource</xpath>
+    <value>
+      <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">30</TerrorSource>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="GibbetCage"]/statBases/TerrorSource</xpath>
+    <value>
+      <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">25</TerrorSource>
+    </value>
+  </Operation>
+    
+  <!-- Make terror thought last 1 in game hour-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThoughtDef[defName="ObservedTerror"]/durationDays</xpath>
+    <value>
+      <durationDays>0.05</durationDays>
+    </value>
+  </Operation>  
+  
+  <!--Gear nerf-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="Apparel_BodyStrap" or defName="Apparel_Collar"]/equippedStatOffsets/SlaveSuppressionOffset</xpath>
+    <value>
+      <SlaveSuppressionOffset>0.05</SlaveSuppressionOffset>
+    </value>
+  </Operation>
+</Patch>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>[Fuu] Useful Terror</name>
+  <author>Fuu Chan</author>
+  <packageId>Fuu.UsefulTerror</packageId>
+  <description>
+Building a horror base filled with skullspikes and gibbets was one of the most spoopylicious possibilities in 1.3, but it turned out terror was never needed and redundant with the collar and body strap. In addition, the way terror worked was janky at best, slow to apply because the observation check has a low tick rate, yet quick to fade when the 5 cell observation range gets surpassed. So I changed it!
+   
+Primary Changes
+Give terror a non-redundant benefit, and make it less janky.
+1. Terror can be used to weaken or nullify the "weapon proximity", "escape route", and "unattended" rebellion penalties. Meaning that outdoor work, hauling/smelting in the armory, assisting in fighting, or even leaving the map with all your colonists is now possible as long as there is sufficient terror coverage.
+2. The terror object observation will remain for 1 in-game hour instead of immediately ending once out of the 5 cell range of the terror object.
+
+Suppression adjusted so that a collar and body strap will not be enough fully halt suppression loss, requiring at least some terror object decoration if you want suppression loss to be zero.
+1. Collar and Body straps now only reduce suppression loss by 5% each, down from 15%. 
+2. Suppression reduction from terror reduced to -20% at 100% terror, down from -45% at 100% terror (Need at least 50% terror with collar and body strap for suppression loss to be zero).
+3. Wardens will now suppress when suppression is under 80%, up from 70%.
+
+Terror values adjusted, because there was no reason to use Gibbets or Terror sculptures over the cheaper and better Skullspikes.
+1. Gibbet buffed to 50 terror, up from 25 terror.
+2. Terror sculpture buffed to 40 terror, up from 10 terror, +-5 per quality difference.
+3. Skullspikes are now lightweight objects like Torches, so they can be placed in sand/swampy terrain, over stockpile zones, won't block wind turbines, and be easily walked over.
+
+The combined effect is that terror will both serve a unique role and be an important consideration in base design. Like a proper game mechanic!
+
+*Optimized for performance.
+*Safe to add and remove mid-game.
+*CE compatible.
+*No known conflicts.
+
+Github Link: https://github.com/tenguin/Rimworld_UsefulTerror
+    
+Credits to: grape05843924, Walfieee, and Pomu Rainpuff for the art sources used in the thumbnail! Give them a visit!
+  </description>
+  <supportedVersions>
+    <li>1.3</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+</ModMetaData>
