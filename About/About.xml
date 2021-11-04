@@ -11,7 +11,7 @@ Give terror a non-redundant benefit, and make it less janky.
 1. Terror can be used to weaken or nullify the "weapon proximity", "escape route", and "unattended" rebellion penalties. Meaning that outdoor work, hauling/smelting in the armory, assisting in fighting, or even leaving the map with all your colonists is now possible as long as there is sufficient terror coverage.
 2. The terror object observation will remain for 1 in-game hour instead of immediately ending once out of the 5 cell range of the terror object.
 
-Suppression adjusted so that a collar and body strap will not be enough fully halt suppression loss, requiring at least some terror objects if you want suppression loss to be zero.
+Suppression adjusted so that a collar and body strap will not be enough to fully halt suppression loss, requiring at least some terror objects if you want suppression loss to be zero.
 1. Collar and Body straps now only reduce suppression loss by 5% each, down from 15%. 
 2. Suppression reduction from terror reduced to -20% at 100% terror, down from -45% at 100% terror (Need at least 50% terror with collar and body strap for suppression loss to be zero).
 3. Wardens will now suppress when suppression is under 80%, up from 70%.
@@ -20,13 +20,17 @@ Terror values adjusted, because there was no reason to use Gibbets or Terror scu
 1. Gibbet buffed to 50 terror, up from 25 terror.
 2. Terror sculpture buffed to 40 terror, up from 10 terror, +-5 per quality difference.
 3. Skullspikes are now lightweight objects like Torches, so they can be placed in sand/swampy terrain, over stockpile zones, won't block wind turbines, and be easily walked over.
+4. Placing/selecting terror structures will now show the terror radius.
 
 The combined effect is that terror will both serve a unique role and be an important consideration in base design. Just in time for Halloween!
 
 *Optimized for performance.
 *Safe to add and remove mid-game.
+*Leaves no permanent changes to your saved-game.
 *CE compatible.
 *No known conflicts.
+
+~1.01 update: Added terror radius indicator when placing/selecting terror structures.
 
 Github Link: https://github.com/tenguin/Rimworld_UsefulTerror
     

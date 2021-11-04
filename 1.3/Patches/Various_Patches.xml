@@ -55,4 +55,12 @@
       <SlaveSuppressionOffset>0.05</SlaveSuppressionOffset>
     </value>
   </Operation>
+  
+  <!--Add terror radius display-->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="SculptureTerror" or defName="Skullspike" or defName="GibbetCage"]</xpath>
+    <value>
+    <specialDisplayRadius>5</specialDisplayRadius>
+    </value>
+  </Operation>
 </Patch>
