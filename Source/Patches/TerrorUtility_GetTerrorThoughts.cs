@@ -13,7 +13,6 @@ namespace UsefulTerror
         private static void GetTerrorThoughts(Pawn pawn, ref IEnumerable<Thought_MemoryObservationTerror> __result)
         {
             __result = TerrorUtility.TakeTopTerrorThoughts(__result);
-            //Log.Message($"CROSS MOD SUPPORT: {UncompromisingFires.UncompromisingFires.GetGUIDrynessLabel()} {UncompromisingFires.UncompromisingFires.GetGUITooltipLabel()}");
         }
     }
 }
