@@ -57,7 +57,7 @@
   </Operation>
   
   <!--Add terror radius display-->
-  <Operation Class="PatchOperationAdd">
+  <Operation Class="PatchOperationSet">
     <xpath>/Defs/ThingDef[defName="SculptureTerror" or defName="Skullspike" or defName="GibbetCage"]</xpath>
     <value>
     <specialDisplayRadius>5</specialDisplayRadius>
