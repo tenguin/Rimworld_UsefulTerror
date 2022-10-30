@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- Make skullspike walk-over-able and buildable on light terrain like torches-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="Skullspike"]/terrainAffordanceNeeded</xpath>
+    <value>
+      <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="Skullspike"]/pathCost</xpath>
+    <value>
+      <pathCost>14</pathCost>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="Skullspike"]/canOverlapZones</xpath>
+    <value>
+      <canOverlapZones>true</canOverlapZones>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="Skullspike"]/blockWind</xpath>
+    <value>
+      <blockWind>false</blockWind>
+    </value>
+  </Operation>
+
+  <!--Remove meditatioonfocusradius from Terror sculptures because double distance indicator is super confusing-->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="SculptureTerror"]</xpath>
+    <value>
+      <comps Inherit="false">
+        <li>
+          <compClass>CompQuality</compClass>
+        </li>
+        <li Class="CompProperties_Art">
+          <nameMaker>NamerArtSculpture</nameMaker>
+          <descriptionMaker>ArtDescription_Sculpture</descriptionMaker>
+          <canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
+        </li>
+        <li Class="CompProperties_MeditationFocus">
+          <statDef>MeditationFocusStrength</statDef>
+          <focusTypes>
+            <li>Artistic</li>
+          </focusTypes>
+        </li>
+        <li Class="CompProperties_Styleable"></li>
+      </comps>
+    </value>
+  </Operation>
+
+  <!--Terror sculptures and Gibbets are underpowered compared to skullspikes-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="SculptureTerror"]/statBases/TerrorSource</xpath>
+    <value>
+      <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">30</TerrorSource>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThingDef[defName="GibbetCage"]/statBases/TerrorSource</xpath>
+    <value>
+      <TerrorSource MayRequire="Ludeon.RimWorld.Ideology">25</TerrorSource>
+    </value>
+  </Operation>
+
+  <!-- Make terror thought last 4 in game hours-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/ThoughtDef[defName="ObservedTerror"]/durationDays</xpath>
+    <value>
+      <durationDays>0.167</durationDays>
+    </value>
+  </Operation>
+
+  <!--Add terror radius display-->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="SculptureTerror" or defName="Skullspike" or defName="GibbetCage"]</xpath>
+    <value>
+      <specialDisplayRadius>5</specialDisplayRadius>
+    </value>
+  </Operation>
+</Patch>
