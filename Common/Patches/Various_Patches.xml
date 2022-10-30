@@ -27,10 +27,11 @@
   </Operation>
 
   <!--Remove meditatioonfocusradius from Terror sculptures because double distance indicator is super confusing-->
-  <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/ThingDef[defName="SculptureTerror"]</xpath>
-    <value>
-      <comps Inherit="false">
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName="SculptureTerror"]/comps</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName="SculptureTerror"]/comps</xpath>
+      <value>
         <li>
           <compClass>CompQuality</compClass>
         </li>
@@ -46,8 +47,37 @@
           </focusTypes>
         </li>
         <li Class="CompProperties_Styleable"></li>
-      </comps>
-    </value>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName="SculptureTerror"]</xpath>
+      <value>
+        <comps Inherit="false">
+          <li>
+            <compClass>CompQuality</compClass>
+          </li>
+          <li Class="CompProperties_Art">
+            <nameMaker>NamerArtSculpture</nameMaker>
+            <descriptionMaker>ArtDescription_Sculpture</descriptionMaker>
+            <canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
+          </li>
+          <li Class="CompProperties_MeditationFocus">
+            <statDef>MeditationFocusStrength</statDef>
+            <focusTypes>
+              <li>Artistic</li>
+            </focusTypes>
+          </li>
+          <li Class="CompProperties_Styleable"></li>
+        </comps>
+      </value>
+    </nomatch>
+  </Operation>
+
+  <!--Set attribute in comps from above in case it was missing the inherit=false attribute-->
+  <Operation Class="PatchOperationAttributeSet">
+    <xpath>/Defs/ThingDef[defName="SculptureTerror"]/comps</xpath>
+    <attribute>Inherit</attribute>
+    <value>false</value>
   </Operation>
 
   <!--Terror sculptures and Gibbets are underpowered compared to skullspikes-->
@@ -73,10 +103,19 @@
   </Operation>
 
   <!--Add terror radius display-->
-  <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/ThingDef[defName="SculptureTerror" or defName="Skullspike" or defName="GibbetCage"]</xpath>
-    <value>
-      <specialDisplayRadius>5</specialDisplayRadius>
-    </value>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName="SculptureTerror" or defName="Skullspike" or defName="GibbetCage"]/specialDisplayRadius</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>/Defs/ThingDef[defName="SculptureTerror" or defName="Skullspike" or defName="GibbetCage"]/specialDisplayRadius</xpath>
+      <value>
+        <specialDisplayRadius>5</specialDisplayRadius>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName="SculptureTerror" or defName="Skullspike" or defName="GibbetCage"]</xpath>
+      <value>
+        <specialDisplayRadius>5</specialDisplayRadius>
+      </value>
+    </nomatch>
   </Operation>
 </Patch>
