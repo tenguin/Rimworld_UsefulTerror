@@ -4,17 +4,19 @@
   <author>Fuu Chan</author>
   <packageId>Fuu.UsefulTerror</packageId>
   <description>
-Building a horror base filled with skullspikes and gibbets was one of the most spoopylicious possibilities in 1.3, but it turned out terror was never needed and redundant with the collar and body strap. In addition, the way terror worked was janky at best, slow to apply because the observation check has a low tick rate, yet quick to fade when the 5 cell observation range gets surpassed. So I changed it!
+Building a horror base filled with skullspikes and gibbets was one of the most spoopylicious possibilities in Ideology, but it turned out terror was never needed and redundant with the collar and body strap. In addition, the way terror worked was janky at best, slow to apply because the observation check has a low tick rate, yet quick to fade when the 5 cell observation range gets surpassed. So I changed it!
    
-Primary Changes
-Give terror a non-redundant benefit, and make it less janky.
+Primary Changes:
+Give terror a non-redundant benefit, and make it less janky:
 1. Terror can be used to weaken or nullify the "weapon proximity", "escape route", and "unattended" rebellion penalties. Meaning that outdoor work, hauling/smelting in the armory, assisting in fighting, or even leaving the map with all your colonists is now possible as long as there is sufficient terror coverage.
-2. The terror object observation will remain for 1 in-game hour instead of immediately ending once out of the 5 cell range of the terror object.
+2. The terror object observation will remain for 4 in-game hours instead of immediately ending once out of the 5 cell range of the terror object.
 
-Suppression adjusted so that a collar and body strap will not be enough to fully halt suppression loss, requiring at least some terror objects if you want suppression loss to be zero.
-1. Collar and Body straps now only reduce suppression loss by 5% each, down from 15%. 
-2. Suppression reduction from terror reduced to -20% at 100% terror, down from -45% at 100% terror (Need at least 50% terror with collar and body strap for suppression loss to be zero).
-3. Wardens will now suppress when suppression is under 80%, up from 70%.
+Smarter suppression logic:
+1. Wardens will suppress when suppression is under 90%, up from 70%.
+2. If suppression loss per day is 0%, wardens will suppress if suppression is under 100%.
+
+New heart acidifier implant:
+1. A mini-acidifier installed next to the heart to instill permanent terror in slaves. Causes a slave to have 100% terror anywhere in the world regardless of terror objects. Unlocked by the Bionic Replacements research.
 
 Terror values adjusted, because there was no reason to use Gibbets or Terror sculptures over the cheaper and better Skullspikes.
 1. Gibbet buffed to 50 terror, up from 25 terror.
@@ -24,12 +26,21 @@ Terror values adjusted, because there was no reason to use Gibbets or Terror scu
 
 The combined effect is that terror will both serve a unique role and be an important consideration in base design. Just in time for Halloween!
 
-*Optimized for performance.
-*Safe to add and remove mid-game.
-*Leaves no permanent changes to your saved-game.
-*CE compatible.
-*No known conflicts.
+*Near 0% performance impact (0.001ms average in Dubs Performance Analyzer).
+*Safe to add mid-game.
+*Not recommended to remove mid-game due to heart acidifier dependency.
+*Confirmed compatible with CE, Vanilla Expanded series, Alpha series, and Humanoid Alien Races.
+*No other known incompatibilies.
 
+(Steam workshop can be slow/janky at detecting updated mods. If the mod doesn't update, unsubscribe, wait a few seconds, and resubscribe to force it to download the latest files)
+~2.01 update: Fixed Heart Acidifier to not be dependent on owning Royalty.
+~2.0 update: 
+- Now compatible with 1.4! 
+- New Heart Acidifier implant!
+- Terror observation effect will now remain for 4 in-game hours, up from 1 hour. This should feel better gameplay wise and will allow for nicer base design, rather than requiring terror coverage for every inch of the base. 
+- Smart logic to ensure wardens maintain 100% suppression if suppression loss per day is 0%.
+- Removed the nerfs to Body straps and Collar, because it was over-complexity and bloat for no real gameplay improvement.
+~1.02 update: Removed the meditation focus radius indicator from terror sculptures because double radius indicators is too confusing.
 ~1.01 update: Added terror radius indicator when placing/selecting terror structures.
 
 Github Link: https://github.com/tenguin/Rimworld_UsefulTerror
@@ -38,6 +49,7 @@ Credits to: grape05843924, Walfieee, and Pomu Rainpuff for the art sources used 
   </description>
   <supportedVersions>
     <li>1.3</li>
+    <li>1.4</li>
   </supportedVersions>
   <modDependencies>
     <li>
@@ -51,6 +63,7 @@ Credits to: grape05843924, Walfieee, and Pomu Rainpuff for the art sources used 
     <li>Ludeon.RimWorld</li>
     <li>Ludeon.RimWorld.Royalty</li>
     <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.RimWorld.Biotech</li>
     <li>brrainz.harmony</li>
   </loadAfter>
 </ModMetaData>

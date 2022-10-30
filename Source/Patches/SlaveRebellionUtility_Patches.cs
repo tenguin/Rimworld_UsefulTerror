@@ -70,7 +70,7 @@ namespace UsefulTerror
                 if (!errorAlreadyDisplayed)
                 {
                     errorAlreadyDisplayed = true;
-                    Log.Error($"Minor error: [Fuu] Useful Terror: Failed to update tooltip:");
+                    Log.Error($"Error: [Fuu] Useful Terror: Failed to update tooltip:");
                     throw;
                 }
             }

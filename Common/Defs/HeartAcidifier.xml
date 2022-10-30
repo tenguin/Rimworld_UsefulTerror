@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>UsefulTerror_HeartAcidifier</defName>
+    <label>heart acidifier</label>
+    <labelNoun>a heart acidifier</labelNoun>
+    <description>An installed heart acidifier.</description>
+    <descriptionHyperlinks><ThingDef>UsefulTerror_HeartAcidifier</ThingDef></descriptionHyperlinks>
+    <spawnThingOnRemoved>UsefulTerror_HeartAcidifier</spawnThingOnRemoved>
+    <stages>
+      <li>
+        <statOffsets>
+          <TerrorSource>100</TerrorSource>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThingDef ParentName="BodyPartBionicBase">
+    <defName>UsefulTerror_HeartAcidifier</defName>
+    <label>heart acidifier</label>
+    <description>A mini-acidifier installed next to the heart to instill permanent terror in slaves.\n\nCauses a slave to have 100% terror anywhere in the world regardless of terror objects.</description>
+    <descriptionHyperlinks><RecipeDef>UsefulTerror_InstallHeartAcidifier</RecipeDef></descriptionHyperlinks>
+    <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+    <costList>
+      <Plasteel>15</Plasteel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <researchPrerequisite>Bionics</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <RecipeDef ParentName="SurgeryInstallImplantBase">
+    <defName>UsefulTerror_InstallHeartAcidifier</defName>
+    <label>install heart acidifier</label>
+    <description>Install a heart acidifier.</description>
+    <descriptionHyperlinks>
+      <ThingDef>UsefulTerror_HeartAcidifier</ThingDef>
+      <HediffDef>UsefulTerror_HeartAcidifier</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Installing heart acidifier.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>UsefulTerror_HeartAcidifier</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>UsefulTerror_HeartAcidifier</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Heart</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>UsefulTerror_HeartAcidifier</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="SurgeryRemoveImplantBase">
+    <defName>UsefulTerror_RemoveHeartAcidifier</defName>
+    <label>remove heart acidifier</label>
+    <description>Remove heart acidifier.</description>
+    <descriptionHyperlinks>
+      <ThingDef>UsefulTerror_HeartAcidifier</ThingDef>
+      <HediffDef>UsefulTerror_HeartAcidifier</HediffDef>
+    </descriptionHyperlinks>
+    <jobString>Removing heart acidifier.</jobString>
+    <removesHediff>UsefulTerror_HeartAcidifier</removesHediff>
+  </RecipeDef>
+</Defs>
