@@ -118,4 +118,26 @@
       </value>
     </nomatch>
   </Operation>
+
+  <!--If Royalty is installed, make Heart Acidifier into a Royalty implant and require Poison Synthesis instead of Bionics-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Royalty</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAttributeSet">
+          <xpath>Defs/ThingDef[defName = "UsefulTerror_HeartAcidifier"]</xpath>
+          <attribute>ParentName</attribute>
+          <value>BodyPartProstheticImperialBase</value>
+        </li>
+        <li Class="PatchOperationReplace">
+          <xpath>Defs/ThingDef[defName = "UsefulTerror_HeartAcidifier"]/recipeMaker/researchPrerequisite</xpath>
+          <value>
+            <researchPrerequisite>VenomSynthesis</researchPrerequisite>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
 </Patch>
