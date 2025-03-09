@@ -21,7 +21,11 @@
     <label>heart acidifier</label>
     <description>A mini-acidifier installed next to the heart to instill permanent terror in slaves.\n\nCauses a slave to have 100% terror anywhere in the world regardless of terror objects.</description>
     <descriptionHyperlinks><RecipeDef>UsefulTerror_InstallHeartAcidifier</RecipeDef></descriptionHyperlinks>
+	<generateCommonality>0</generateCommonality>
     <thingSetMakerTags><li>RewardStandardLowFreq</li></thingSetMakerTags>
+	<techHediffsTags>
+	  <li>PainCauser</li>
+	</techHediffsTags>
     <costList>
       <Plasteel>15</Plasteel>
       <ComponentIndustrial>4</ComponentIndustrial>

@@ -7,7 +7,7 @@ namespace UsefulTerror
     [HarmonyPatch(typeof(TerrorUtility))]
     internal static class TerrorUtility_Patches
     {
-        /* Obsolete reason: No real reason to limit it to only top 3 terror objects like Vanilla. Pointlessly wasting performance when this is called every few ticks per pawn
+        /* Obsolete: No real reason to limit it to only top 3 terror objects like Vanilla. Pointlessly wasting performance when this is called every few ticks per pawn
         [HarmonyPostfix]
         [HarmonyPatch("GetTerrorThoughts")]
         private static void GetTerrorThoughts(Pawn pawn, ref IEnumerable<Thought_MemoryObservationTerror> __result)
