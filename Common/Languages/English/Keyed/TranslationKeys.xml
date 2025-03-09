@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<UsefulTerror_Title>Useful Terror</UsefulTerror_Title>
+	<UsefulTerror_RebellionMultiplier>Time until Slave Rebellion (Higher is longer until next rebellion)</UsefulTerror_RebellionMultiplier>
+	<UsefulTerror_PrisonBreakMultiplier>Time until Prison Break (Higher is longer until next prison break)</UsefulTerror_PrisonBreakMultiplier>
+	<UsefulTerror_ResetAll>Reset All</UsefulTerror_ResetAll>
+</LanguageData>

@@ -31,6 +31,7 @@ namespace UsefulTerror
                 {
                     __result *= GetAntiUnattendedFactor(pawn);
                 }
+                __result *= Settings.RebellionMultiplier;
             }
         }
 
@@ -40,6 +41,9 @@ namespace UsefulTerror
         {
             try
             {
+                if (SlaveRebellionUtility.IsRebelling(pawn))
+                    return;
+
                 if (InRoomTouchingMapEdge(pawn))
                 {
                     string escapeFactor = "SuppressionEscapeFactor".Translate();
@@ -64,13 +68,19 @@ namespace UsefulTerror
                     __result = __result.Remove(start, end - start);
                     __result = __result.Insert(start, unattendedFactor + ": x" + Math.Round(0.05f * GetAntiUnattendedFactor(pawn) * 100f, MidpointRounding.AwayFromZero) + "%");
                 }
+                if (Settings.RebellionMultiplier != 1f)
+                {
+                    string finalInterval = "SuppressionFinalInterval".Translate();
+                    int start = __result.IndexOf(finalInterval, StringComparison.Ordinal);
+                    __result = __result.Insert(start, "UsefulTerror_Title".Translate() + ": x" + Math.Round(Settings.RebellionMultiplier * 100f, MidpointRounding.AwayFromZero) + "%\n");
+                }
             }
             catch (Exception)
             {
                 if (!errorAlreadyDisplayed)
                 {
                     errorAlreadyDisplayed = true;
-                    Log.Error($"Error: [Fuu] Useful Terror: Failed to update tooltip:");
+                    Log.Error($"Error: [Useful Terror: Failed to update tooltip:");
                     throw;
                 }
             }

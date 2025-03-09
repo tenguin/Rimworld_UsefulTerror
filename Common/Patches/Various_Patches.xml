@@ -140,4 +140,21 @@
       </operations>
     </match>
   </Operation>
+	
+	<!--If Anomaly is installed, add terror to bliss lobotomy-->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Anomaly</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/HediffDef[defName = "BlissLobotomy"]/stages/li/statOffsets</xpath>
+					<value>
+						<TerrorSource>100</TerrorSource>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
 </Patch>
